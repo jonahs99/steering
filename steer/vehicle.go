@@ -12,7 +12,7 @@ func NewVehicle(x, y, speed, heading float64) Vehicle {
 		Velocity: vec.NewPolar(speed, heading),
 		Heading:  heading,
 		MaxForce: 0.1,
-		MaxSpeed: 3,
+		MaxSpeed: 2,
 	}
 }
 

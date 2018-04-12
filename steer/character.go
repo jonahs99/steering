@@ -1,14 +1,14 @@
 package steer
 
-import "github.com/jonahs99/vec"
-
 // Character is an autonomous character
 type Character struct {
-	Vehicle  Vehicle
-	Behavior func() vec.Vec
+	Vehicle    Vehicle
+	Behavior   Behavior
+	Constraint Constraint
 }
 
 // Tick applies the steering behavior and advances the vehicle
 func (c *Character) Tick() {
 	c.Vehicle.Tick(c.Behavior())
+	c.Vehicle.Position = c.Constraint(c.Vehicle.Position)
 }
